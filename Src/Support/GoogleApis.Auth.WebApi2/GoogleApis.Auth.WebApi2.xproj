@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>90aaa10f-cecb-4ea2-984b-e9f5a268196d</ProjectGuid>
-    <RootNamespace>GoogleApis.Auth.WebApi</RootNamespace>
+    <ProjectGuid>f8b613c0-220a-45a7-96d1-2adad7740ad5</ProjectGuid>
+    <RootNamespace>GoogleApis.Auth.WebApi2</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
   </PropertyGroup>
