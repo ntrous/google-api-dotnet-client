@@ -32,7 +32,7 @@ namespace Google.Apis.Auth.OAuth2.Mvc
         /// </summary>
         /// <param name="controller">The controller</param>
         /// <returns>User identifier</returns>
-        public abstract string GetUserId(Controller controller);
+        public abstract string GetUserId();
 
         /// <summary>Gets the authorization code flow.</summary>
         public abstract IAuthorizationCodeFlow Flow { get; }

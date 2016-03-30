@@ -14,12 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-
-using Google.Apis.Auth.OAuth2;
 using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Mvc.Filters;
 using Google.Apis.Auth.OAuth2.Responses;
@@ -42,7 +39,7 @@ namespace Google.Apis.Auth.OAuth2.Mvc.Controllers
         /// <summary>
         /// Gets the user identifier. Potential logic is to use session variables to retrieve that information.
         /// </summary>
-        protected string UserId { get { return FlowData.GetUserId(this); } }
+        protected string UserId { get { return FlowData.GetUserId(); } }
 
         #region Abstract and Virtual Members
 

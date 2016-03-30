@@ -30,23 +30,18 @@ namespace Google.Apis.Auth.OAuth2.Mvc
     {
         // TODO(peleyal): we should also follow the MVC framework Authorize attribute
 
-        private readonly Controller controller;
         private readonly FlowMetadata flowData;
-
-        /// <summary>Gets the controller which is the owner of this authorization code MVC app instance.</summary>
-        public Controller Controller { get { return controller; } }
 
         /// <summary>Gets the <see cref="Google.Apis.Auth.OAuth2.Mvc.FlowMetadata"/> object.</summary>
         public FlowMetadata FlowData { get { return flowData; } }
 
         /// <summary>Constructs a new authorization code MVC app using the given controller and flow data.</summary>
-        public AuthorizationCodeMvcApp(Controller controller, FlowMetadata flowData)
+        public AuthorizationCodeMvcApp(FlowMetadata flowData, Uri uri)
             : base(
             flowData.Flow,
-            new Uri(controller.Request.Url.GetLeftPart(UriPartial.Authority) + flowData.AuthCallback).ToString(),
-            controller.Request.Url.ToString())
+            new Uri(uri.GetLeftPart(UriPartial.Authority) + flowData.AuthCallback).ToString(),
+            uri.ToString())
         {
-            this.controller = controller;
             this.flowData = flowData;
         }
 
@@ -61,7 +56,7 @@ namespace Google.Apis.Auth.OAuth2.Mvc
         /// </returns>
         public Task<AuthResult> AuthorizeAsync(CancellationToken taskCancellationToken)
         {
-            return base.AuthorizeAsync(FlowData.GetUserId(Controller), taskCancellationToken);
+            return base.AuthorizeAsync(FlowData.GetUserId(), taskCancellationToken);
         }
     }
 }
