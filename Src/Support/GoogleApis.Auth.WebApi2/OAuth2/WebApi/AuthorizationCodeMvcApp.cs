@@ -37,7 +37,7 @@ namespace Google.Apis.Auth.OAuth2.WebApi
         public AuthorizationCodeMvcApp(FlowMetadata flowData, Uri uri)
             : base(
             flowData.Flow,
-            new Uri(uri.GetLeftPart(UriPartial.Authority) + flowData.AuthCallback).ToString(),
+            new Uri(uri + flowData.AuthCallback).ToString(),
             uri.ToString())
         {
             this.flowData = flowData;
